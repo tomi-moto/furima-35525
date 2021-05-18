@@ -1,0 +1,41 @@
+<mxfile>
+    <diagram id="pH6IQAVRkxJKomeBUK12" name="ページ1">
+        <mxGraphModel dx="442" dy="465" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.55;entryY=-0.025;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="2" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.444;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="2" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="users table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=0;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="80" width="160" height="170" as="geometry">
+                        <mxRectangle x="180" y="80" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="nickname&lt;br&gt;email&lt;br&gt;password&lt;br&gt;password_confirmation&lt;br&gt;birth_date&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;first_kana&lt;br&gt;last_kana&lt;br&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;spacingLeft=2;" vertex="1" parent="2">
+                    <mxGeometry y="30" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="items table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=0;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="260" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="title&#10;price&#10;introduce&#10;category&#10;state&#10;fee&#10;image&#10;from&#10;time&#10;user" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="orders table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=0;" vertex="1" parent="1">
+                    <mxGeometry x="334" y="260" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="user&#10;post_num&#10;to&#10;ku&#10;ban&#10;building&#10;number" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="6">
+                    <mxGeometry y="30" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" target="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="200" y="373" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
