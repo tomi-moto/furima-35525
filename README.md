@@ -16,7 +16,6 @@
 ### Association
 
 * has_many :items
-* has_many :orders
 * has_many :purchase_records
 
 ## items table
@@ -24,10 +23,9 @@
 | Column                              | Type          | Options           |
 |-------------------------------------|---------------|-------------------|
 | title                               | string        | null: false       |
-| price                               | integer       | null: false       |¥300~9,999,999
+| price                               | integer       | null: false       |
 | introduction                        | text          | null: false       |
 | user                                | references    | foreign_key: true |
-| order                               | references    | foreign_key: true |
 | category_id                         | integer       | null: false       |
 | state_id                            | integer       | null: false       |
 | fee_id                              | integer       | null: false       |
@@ -36,17 +34,15 @@
 
 ### Association
 
-* belongs_to :users
+* belongs_to :user
 * has_one :purchase_record
-* has_one :order
 
 ## orders table
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
-| user                                | references | foreign_key: true |
-| order                               | references | foreign_key: true |
-| post_num                            | string     | null: false       |7(-)
+| purchase_record                     | references | foreign_key: true |
+| post_num                            | string     | null: false       |
 | prefectures_id                      | integer    | null: false       |
 | city                                | string     | null: false       |
 | address                             | string     | null: false       |
@@ -55,18 +51,17 @@
 
 ### Association
 
-* belongs_to :user
-* belongs_to :item
-
+* has_one :purchase_record
 
 ## purchase_records table
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
-| items                               | references | foreign_key: true |
+| item                                | references | foreign_key: true |
 | user                                | references | foreign_key: true |
 
 ### Association
 
 * belongs_to :user
 * belongs_to :item
+* belongs_to :order
