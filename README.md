@@ -17,7 +17,7 @@
 
 * has_many :items
 * has_many :orders
-* has_many :purchase_record
+* has_many :purchase_records
 
 ## items table
 
@@ -27,6 +27,7 @@
 | price                               | integer       | null: false       |¥300~9,999,999
 | introduction                        | text          | null: false       |
 | user                                | references    | foreign_key: true |
+| order                               | references    | foreign_key: true |
 | category_id                         | integer       | null: false       |
 | state_id                            | integer       | null: false       |
 | fee_id                              | integer       | null: false       |
@@ -36,6 +37,7 @@
 ### Association
 
 * belongs_to :users
+* has_one :purchase_record
 * has_one :order
 
 ## orders table
@@ -43,28 +45,28 @@
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
 | user                                | references | foreign_key: true |
-| post_num                            | integer    | null: false       |7(-)
-| to_id                               | integer    | null: false       |
-| ku                                  | string     | null: false       |
-| ban                                 | integer    | null: false       |
-| building                            | string     |                   |
-| number                              | integer    | null: false       |
+| order                               | references | foreign_key: true |
+| post_num                            | string     | null: false       |7(-)
+| prefectures_id                      | integer    | null: false       |
+| city                                | string     | null: false       |
+| address                             | string     | null: false       |
+| building_name                       | string     |                   |
+| phone_number                        | integer    | null: false       |
 
 ### Association
 
 * belongs_to :user
-* belongs_to :items
-* has_one :purchase_record
+* belongs_to :item
 
 
-## purchase_record table
+## purchase_records table
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
-| order                               | references | foreign_key: true |
+| items                               | references | foreign_key: true |
 | user                                | references | foreign_key: true |
 
 ### Association
 
 * belongs_to :user
-* belongs_to :purchase_record
+* belongs_to :item
