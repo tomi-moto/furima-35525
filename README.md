@@ -43,7 +43,7 @@
 |-------------------------------------|------------|-------------------|
 | purchase_record                     | references | foreign_key: true |
 | post_num                            | string     | null: false       |
-| prefectures_id                      | integer    | null: false       |
+| prefecture_id                       | integer    | null: false       |
 | city                                | string     | null: false       |
 | address                             | string     | null: false       |
 | building_name                       | string     |                   |
@@ -51,7 +51,7 @@
 
 ### Association
 
-* has_one :purchase_record
+* belongs_to :purchase_record
 
 ## purchase_records table
 
@@ -64,4 +64,4 @@
 
 * belongs_to :user
 * belongs_to :item
-* belongs_to :order
+* has_one :order
