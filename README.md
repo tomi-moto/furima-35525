@@ -29,7 +29,7 @@
 | category_id                         | integer       | null: false       |
 | state_id                            | integer       | null: false       |
 | fee_id                              | integer       | null: false       |
-| from_id                             | integer       | null: false       |
+| prefecture_id                       | integer       | null: false       |
 | time_id                             | integer       | null: false       |
 
 ### Association
@@ -47,7 +47,7 @@
 | city                                | string     | null: false       |
 | address                             | string     | null: false       |
 | building_name                       | string     |                   |
-| phone_number                        | integer    | null: false       |
+| phone_number                        | string     | null: false       |
 
 ### Association
 
