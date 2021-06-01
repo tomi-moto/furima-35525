@@ -1,6 +1,5 @@
 require 'rails_helper'
-# user = User.new(nickname: "", email: "", password: "", password_confirmation: "", birth_date: "", first_name: "", last_name: "", first_kana: "", last_kana: "")
-# bundle exec rspec spec/models/user_spec.rb
+# テスト用 bundle exec rspec spec/models/user_spec.rb
 RSpec.describe User, type: :model do
   describe "ユーザー新規登録" do
     before do
@@ -48,6 +47,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
+      it "メールアドレスは＠を含む必要があること" do
+        @user.email = 'furima013'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
       it "半角英語のみだと登録できない" do
         @user.password = 'ffffff'
         @user.password_confirmation = 'ffffff'
@@ -81,11 +85,15 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
-      it "ユーザーの本名は全角での入力であること" do
-        @user.first_name = 'furima'
+      it "ユーザーの本名の苗字は全角での入力であること" do
         @user.last_name = 'furima'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name is invalid", "Last name is invalid")
+        expect(@user.errors.full_messages).to include("Last name is invalid")
+      end
+      it "ユーザーの本名の名前は全角での入力が必要であること" do
+        @user.first_name = 'furima'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name is invalid")
       end
       it "ユーザーのフリガナは苗字が必要であること" do
         @user.last_kana = ''
@@ -106,6 +114,16 @@ RSpec.describe User, type: :model do
         @user.first_kana = 'ふりま'
         @user.valid?
         expect(@user.errors.full_messages).to include("First kana is invalid")
+      end
+      it "ユーザーの名前のフリガナは半角では登録できない" do
+        @user.first_kana = 'ﾌﾘﾏ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First kana is invalid")
+      end
+      it "ユーザーの苗字のフリガナは半角では登録できない" do
+        @user.last_kana = 'ﾌﾘﾏ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last kana is invalid")
       end
       it "生年月日がからでは登録できない" do
         @user.birth_date = ''
