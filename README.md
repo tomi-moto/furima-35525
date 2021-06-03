@@ -30,7 +30,7 @@
 | state_id                            | integer       | null: false       |
 | fee_id                              | integer       | null: false       |
 | prefecture_id                       | integer       | null: false       |
-| time_id                             | integer       | null: false       |
+| days_id                             | integer       | null: false       |
 
 ### Association
 
