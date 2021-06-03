@@ -3,7 +3,12 @@ class Item < ApplicationRecord
   #has_one :purchase_record
   has_one_attached :image
 
+  def was_attached?
+    self.image.was_attached?
+  end
+
   with_options presence: true do
+    validates :image
     validates :title
     validates :price, inclusion: {in: 300..9999999 }
     validates :introduction
