@@ -141,7 +141,7 @@
       <li class='list'>
         <%#= link_to "#" do %>
         <div class='item-img-content' >
-          <%= link_to image_tag(item.image, class: "item-img"), item_path(item) if item.image.attached? %>
+          <%= image_tag(item.image, class: "item-img") if item.image.attached? %>
           <%# 商品が売れていればsold outを表示しましょう %>
           <%# if #条件分 %>
           <div class='sold-out'>
