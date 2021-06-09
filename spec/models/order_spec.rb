@@ -65,6 +65,16 @@ RSpec.describe OrderUser, type: :model do
         @order_user.valid?
         expect(@order_user.errors.full_messages).to include("Phone number is invalid")
       end
+      it '電話番号は半角英数字混合では購入できない' do
+        @order_user.phone_number = '080123456tq'
+        @order_user.valid?
+        expect(@order_user.errors.full_messages).to include("Phone number is invalid")
+      end
+      it '電話番号は全角の数字では購入できない' do
+        @order_user.phone_number = '０８０１２３４５６７８'
+        @order_user.valid?
+        expect(@order_user.errors.full_messages).to include("Phone number is invalid")
+      end
       it 'tokenが空では購入できない' do
         @order_user.token = nil
         @order_user.valid?
