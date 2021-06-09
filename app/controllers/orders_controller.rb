@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :authenticate_user!, except: [:create, :index]
   before_action :move_to_index, only: [:index, :create]
-  before_action :sold_out, only: [:index]
+  before_action :sold_out, only: [:index, :create]
 
   def index
     @order_user = OrderUser.new
