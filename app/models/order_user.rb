@@ -1,6 +1,6 @@
 class OrderUser
   include ActiveModel::Model
-  attr_accessor :post_num, :prefecture_id, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token, :purchase_record_id
+  attr_accessor :post_num, :prefecture_id, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token
     ## order_userのバリデーション
     with_options presence: true do
         validates :post_num, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
