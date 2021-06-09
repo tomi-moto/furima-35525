@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe OrderUser, type: :model do
   describe "商品購入" do
     before do
-      @order_user = FactoryBot.build(:order_user)
+      user = FactoryBot.create(:user)
+      item = FactoryBot.create(:item)
+      @order_user = FactoryBot.build(:order_user, user_id: user.id,item_id: item.id)
+      sleep 0.5
     end
 
     context '問題なし' do
