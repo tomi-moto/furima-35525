@@ -68,3 +68,4 @@ gem 'active_hash'
 gem 'rb-readline'
 
 gem 'payjp'
+gem "aws-sdk-s3", require: false
